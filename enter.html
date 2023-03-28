@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qui est l'auteur ?</title>
+</head>
+
+<body>
+    <h1>Bienvenue sur le jeu Qui est l'auteur ?</h1>
+    <p>Entrez votre adresse email, cela nous permet d'éviter une surcharge des serveurs.</p>
+    <input type="email" name="email" placeholder="Entrez votre email">
+    <input type="submit" value="Entrer" disabled>
+
+    <script>
+        // Define the function to send the email address to the server
+        function sendEmail() {
+            // Get the email address
+            let email = document.getElementsByName("email")[0].value;
+            // Send the email address to the server by using parameters
+            window.location.href = "https://api.bet4free.app/quiz/enter?email=" + email;
+        }
+        // Add an event listener to the submit button
+        document.getElementsByTagName("input")[1].addEventListener("click", sendEmail);
+
+        // Disable the button if the email address is not valid
+        function validateEmail(email) {
+            // Define the regex to validate the email address
+            let re = /\S+@\S+\.\S+/;
+            // Return true if the email address is valid
+            return re.test(email);
+        }
+        // Add an event listener to the email input field
+        document.getElementsByTagName("input")[0].addEventListener("input", function () {
+            // Get the email address
+            let email = document.getElementsByName("email")[0].value;
+            // Get the submit button
+            let submit = document.getElementsByTagName("input")[1];
+            // If the email address is not valid, disable the button
+            if (!validateEmail(email)) {
+                submit.disabled = true;
+            }
+            // If the email address is valid, enable the button
+            else {
+                submit.disabled = false;
+            }
+        });
+
+
+    </script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Helvetica, sans-serif;
+        }
+
+        input {
+            margin: 10px;
+            padding: 10px;
+            outline: none;
+
+            border: none;
+        }
+
+        input[type="submit"] {
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            font-size: 2rem;
+            transition: 0.2s;
+        }
+
+
+        input[type="submit"]:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            transition: 0.2s;
+        }
+
+        input[type="submit"]:enabled {
+            background-color: #4CAF50;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        input[type="submit"]:enabled:hover {
+            background-color: #45a049;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        input[type="email"] {
+            width: 300px;
+            border-bottom: 1px solid black;
+            transition: 0.3s;
+
+        }
+
+        input[type="email"]:focus {
+            width: 300px;
+            transition: 0.3s;
+            border-bottom: 1px solid #5E9ED6;
+        }
+    </style>
+
+</body>
+
+</html>

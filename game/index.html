@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script defer src="script.js"></script>
+  <link href="styles.css" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" />
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <access origin="*" />
+
+  <title>Qui est l'auteur ?</title>
+</head>
+
+<body>
+  <header>
+    <div class="title">Qui est l'auteur ?</div>
+    <div class="container">
+      <div id="question-container" class="hide">
+        <div id="question"></div>
+        <div id="answer-buttons" class="btn-grid">
+          <button class="btn" id="bt1">Question 1</button>
+          <button class="btn" id="bt2">Question 2</button>
+          <button class="btn" id="bt3">Question 3</button>
+          <button class="btn" id="bt4">Question 4</button>
+          <button class="btn" id="bt5">Question 5</button>
+          <button class="btn" id="bt6">Question 6</button>
+          <button class="btn" id="bt7">Question 7</button>
+          <button class="btn" id="bt8">Question 8</button>
+          <button class="btn" id="bt9">Question 9</button>
+          <button class="btn" id="bt10">Question 10</button>
+          <button class="btn" id="bt11">Question 11</button>
+          <button class="btn" id="bt12">Question 12</button>
+        </div>
+      </div>
+      <div id="score-container" class="hide2">
+        <div id="score">Score : 0</div>
+        <div id="score-mark">/12</div>
+      </div>
+      <div id="index" class="hide">Anecdote 1/12</div>
+    </div>
+    <div class="controls">
+      <button id="start-btn" class="start-btn btn">Commencer</button>
+      <div class="bottom-btn">
+        <button id="hint-btn" class="hint-btn btn hide">Contexte</button>
+        <button id="next-btn" class="next-btn btn hide">Suivant</button>
+      </div>
+    </div>
+    </div>
+    <div id="dialog-confirm" title="Détails de l'anecdote" class="hide">
+      <p>
+        <span class="ui-icon ui-icon-alert" id="context"></span>
+      </p>
+    </div>
+  </header>
+
+
+  <div id="watermark" class="hide">Quiz made by Bet4Free</div>
+
+</body>
+
+
+</html>

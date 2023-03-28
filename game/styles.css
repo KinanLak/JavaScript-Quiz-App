@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+@font-face {
+  font-family: Forte;
+  src: url(FORTE.TTF);
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --hue-neutral: #00B5FF;
+  --hue-wrong: #363636;
+  --hue-correct: #A6BA6B;
+  --hue-text-background: #A6BA6B;
+  --hue-wrong-selected: #ED655F;
+  --hue-text: #ffffff;
+  --hue-hover: #1b6391;
+  --hue-background: #BF7972;
+  --hue-hint: #ffc600;
+  --hue-hint-hover: #ff9f00;
+}
+
+#question {
+  width: 100%;
+  outline: none;
+  text-shadow: none;
+  background-color: var(--hue-text-background);
+  color: var(--hue-text);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+
+}
+
+
+body {
+  font-family: 'Londrina Solid', sans-serif;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: url("big_feuilles.png") repeat;
+  overflow: overlay;
+  animation: displace 100s linear infinite;
+  -webkit-animation: displace 100s linear infinite;
+  background-color: var(--hue-background);
+  backdrop-filter: blur(1px);
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-family: 'Forte', cursive;
+  font-size: 5rem;
+  text-align: center;
+  color: white;
+}
+
+#watermark {
+  position: absolute;
+  font-family: 'Comfortaa', cursive;
+  font-size: 1rem;
+  font-weight: 900;
+  bottom: 0;
+  right: 0;
+  opacity: 0.8;
+  padding: 5px 10px;
+  padding-bottom: 2px;
+  border-top-left-radius: 5px;
+  z-index: -1;
+  color: white;
+  background-color: #4646469d;
+  border-top: 2px solid #464646;
+  border-left: 2px solid #464646;
+}
+
+.container {
+  overflow: hidden;
+
+
+  width: 80%;
+  font-size: 2rem;
+  color: var(--hue-text);
+
+  padding: 2rem 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: justify;
+}
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --hue: var(--hue-neutral);
+  border: none;
+  background-color: var(--hue);
+  max-height: 4rem;
+  border-radius: 0.5rem;
+  padding: 1.5rem 1rem;
+  color: white;
+  outline: none;
+  height: 100%;
+  width: 100%;
+  font-size: 1.75rem;
+  font-family: 'Fredoka One', cursive;
+  transition: ease .3s;
+
+}
+
+.btn:hover {
+  transition: ease-in 0.1s;
+  background-color: var(--hue-hover);
+  color: white;
+  cursor: pointer;
+}
+
+.btn.correct {
+  --hue: var(--hue-correct);
+  color: white;
+}
+
+.btn.wrong {
+  --hue: var(--hue-wrong);
+}
+
+.btn.wrong:hover {
+  background-color: var(--hue-wrong);
+  cursor: default;
+}
+
+.btn.wrong-selected {
+  background-color: var(--hue-wrong-selected);
+  color: white;
+}
+
+.btn.wrong-selected:hover {
+  background-color: var(--hue-wrong-selected);
+  color: white;
+}
+
+.btn.correct:hover {
+  cursor: default;
+  background-color: var(--hue-correct);
+}
+
+
+
+.hide {
+  display: none !important;
+}
+
+@keyframes displace {
+  from {
+    background-position: 0px 0px;
+  }
+
+  to {
+    background-position: 1280px 720px;
+  }
+}
+
+#index {
+  font-size: 2rem;
+  color: white;
+  margin: 1rem 1rem;
+  display: flex;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  align-items: end;
+  text-align: left;
+}
+
+#score-container {
+  font-size: 3rem;
+  color: white;
+  margin: 1rem 2rem;
+  display: flex;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  align-items: end;
+}
+
+#score-mark {
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.hide2 {
+  display: none;
+  opacity: 0;
+}
+
+#score-container.score-end {
+  position: relative;
+  display: flex;
+  font-size: 4rem;
+  z-index: 1;
+  text-align: center;
+  align-items: center !important;
+  justify-content: center !important;
+
+  margin-top: 5rem 0rem;
+
+}
+
+#score-mark.score-mark-end {
+  font-size: 4rem !important;
+  padding: 0;
+}
+
+.score-container-end {
+  margin: 0.;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+header.end {
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+}
+
+header {
+  width: 100%;
+}
+
+.bottom-btn {
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  border-radius: 1.5rem;
+  padding: 1.5rem 3rem;
+  margin: 0;
+  bottom: 0rem;
+  gap: 3rem;
+  width: 40%;
+
+}
+
+.hint-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.next-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.hint-btn {
+  background-color: var(--hue-hint);
+}
+
+.hint-btn:hover {
+  background-color: var(--hue-hint-hover);
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#context {
+  float: left;
+  margin: 12px 12px 20px 0;
+  font-family: 'Fredoka One', sans-serif;
+  font-weight: 200;
+  background-color: white   !important;
+}
+
+#dialog-confirm {
+  float: left;
+  margin: 12px 12px 20px 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 200;
+  background-color: white !important;
+}
